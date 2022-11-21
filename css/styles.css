@@ -236,7 +236,6 @@ img {
 .hero-btn {
   display: block;
   margin: 0 auto;
-  text-align: center;
 
   min-width: 216px;
   min-height: 50px;
@@ -248,13 +247,14 @@ img {
   line-height: calc(30 / 16);
 
   display: flex;
+  justify-content: center;
   align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
   background: var(--link-focus-color);
   cursor: pointer;
   color: var(--text-fon-white-color);
-  border-color: transparent;
+  border: none;
 
   border-radius: 4px;
 
@@ -670,18 +670,12 @@ img {
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-
-  transition-property: box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-btn-icon {
   margin-left: 10px;
   fill: var(--text-fon-white-color);
 }
 
-.footer-btn:focus {
-}
 /*--------------footer---------------*/
 /*--------------portfolio-main--------------*/
 .main {
@@ -920,16 +914,13 @@ img {
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  outline: 1px solid transparent;
-  outline-offset: -1px;
 
-  transition-property: box-shadow, outline;
+  transition-property: border;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-field:focus {
-  outline-color: var(--link-focus-color);
-  box-shadow: 0 0 0 4px rgb(33, 150, 243, 0.25);
+  border: 1px solid #2196f3;
 }
 .modal-form-icon {
   position: absolute;
@@ -953,19 +944,19 @@ img {
   padding: 12px 16px;
 
   resize: none;
+  outline: unset;
+  border: none;
+  background-color: transparent;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  outline: 1px solid transparent;
-  outline-offset: -1px;
 
-  transition-property: box-shadow, outline;
+  transition-property: border;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-massege:focus {
-  outline-color: var(--link-focus-color);
-  box-shadow: 0 0 0 4px rgb(33, 150, 243, 0.25);
+  border: 1px solid #2196f3;
 }
 .modal-form-massege::placeholder {
   font-size: 12px;
@@ -1000,22 +991,34 @@ img {
   width: 16px;
   height: 15px;
 
+  outline: unset;
   background-color: transparent;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+
   border: 2px solid var(--text-black-color);
   border-radius: 2px;
 
   background-position: center;
   background-repeat: no-repeat;
+  background-image: none;
 
-  transition-property: outline, background;
+  transition-property: border-color, background-color, background-image;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-checkbox:checked {
   background-color: var(--link-focus-color);
-  outline: 2px solid var(--link-focus-color);
+  border-color: #2196f3;
   background-image: url("data:image/svg+xml,%3Csvg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.95703 4.75166L1.88825 4.68604L1.81923 4.75141L0.93123 5.59258L0.854858 5.66492L0.930974 5.73753L4.42671 9.07236L4.49574 9.1382L4.56476 9.07236L12.069 1.91352L12.1449 1.84116L12.069 1.76881L11.1873 0.927644L11.1183 0.861826L11.0493 0.927611L4.49577 7.17353L1.95703 4.75166Z' fill='white' stroke='white' stroke-width='0.2'/%3E%3C/svg%3E");
+}
+
+.modal-form-btn {
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-btn:focus,
+.modal-form-btn:hover {
+  background-color: #188ce8;
 }
